@@ -1,0 +1,61 @@
+Artificial Intelligence: A Complete Overview
+
+What is Artificial Intelligence?
+Artificial Intelligence (AI) is the ability of a computer or machine to perform tasks that normally require human intelligence. These tasks include understanding language, recognising images, making decisions, and solving problems. AI does not think like a human, but it can process huge amounts of data and find patterns that humans might miss.
+
+Types of AI
+
+Machine Learning (ML)
+Machine Learning is a branch of AI where a computer learns from data without being explicitly programmed. Instead of writing rules for every situation, you feed the computer thousands of examples and it figures out the patterns on its own. For example, you show it 10,000 photos of cats and dogs with labels. After training, it can look at a new photo and correctly say whether it is a cat or a dog.
+
+Deep Learning
+Deep Learning is a type of Machine Learning that uses neural networks with many layers. These layers work like the human brain — each layer learns something slightly more complex than the previous one. For example, the first layer might learn to detect edges in an image. The next layer combines edges into shapes. The next layer recognises objects. Deep Learning is what powers face recognition, voice assistants, and self-driving cars.
+
+Natural Language Processing (NLP)
+Natural Language Processing is the branch of AI that deals with human language — text and speech. It allows computers to read text, understand its meaning, translate languages, and generate new text. Large Language Models like GPT-4 and Gemma are built on NLP techniques.
+
+Large Language Models (LLMs)
+A Large Language Model is a type of AI trained on massive amounts of text — billions of web pages, books, and articles. It learns to predict the next word in a sentence, and from doing this trillions of times, it develops a deep understanding of language, facts, and reasoning. Examples include GPT-4 by OpenAI, Gemma by Google, Mistral, and Claude by Anthropic.
+
+Small Language Models (SLMs)
+Small Language Models are compressed, faster versions of LLMs. Examples include Phi-3 by Microsoft, Qwen by Alibaba, and Gemma-2B. They are useful when you need AI to run on a laptop or phone without an internet connection, or when cost is a concern. SLMs trade some capability for speed and efficiency.
+
+What is RAG (Retrieval-Augmented Generation)?
+RAG is a technique that combines a vector database with a Large Language Model. The problem it solves is this: LLMs are trained on data up to a certain date and can make up facts (this is called hallucination). RAG fixes this by giving the LLM access to your own documents at query time.
+
+How RAG works, step by step:
+Step 1 — Load your documents into the system.
+Step 2 — Break the documents into small chunks of text (e.g., 500 characters each).
+Step 3 — Convert each chunk into a vector (a list of numbers that represents its meaning) using an embedding model.
+Step 4 — Store all the vectors in a vector database like FAISS or ChromaDB.
+Step 5 — When a user asks a question, convert the question into a vector too.
+Step 6 — Search the vector database for the most similar chunks to the question.
+Step 7 — Send the retrieved chunks plus the question to the LLM.
+Step 8 — The LLM generates an answer based only on what it retrieved, not from memory.
+
+This means the AI can answer questions about documents it was never trained on.
+
+What is a Vector Database?
+A vector database stores text as numbers (vectors) and allows fast search by meaning rather than exact words. If you store the sentence "The cat sat on the mat" as a vector, searching for "a feline rested on a rug" will still find it, because the meanings are similar. Popular vector databases include FAISS (by Facebook/Meta), ChromaDB, Pinecone, and Weaviate. FAISS is open source and free, and runs entirely on your local machine without a server.
+
+What is LangChain?
+LangChain is a Python and JavaScript framework that makes it easier to build applications using Large Language Models. Instead of writing all the connection code yourself, LangChain provides pre-built building blocks for loading documents, splitting text, creating embeddings, storing vectors, retrieving relevant chunks, and calling LLMs. It is the most popular framework for building RAG applications and AI agents.
+
+What are AI Agents?
+An AI agent is a system where an LLM can take actions, observe results, and decide what to do next — rather than just producing one response and stopping. For example, an agent given the task "research the latest AI news and summarise it" might search the web, read multiple articles, combine the information, and write a summary — all automatically. LangGraph and AutoGen are frameworks for building multi-step agentic AI systems.
+
+Key AI Frameworks and Tools
+- LangChain: Connects LLMs to external data and tools
+- LangGraph: Builds multi-step agentic workflows using state machines
+- LlamaIndex: Similar to LangChain, specialised for document retrieval
+- HuggingFace Transformers: Open-source library for loading and running pre-trained AI models
+- FAISS: Facebook AI Similarity Search — fast local vector database
+- ChromaDB: Open-source vector database with a simple Python API
+- Docker: Containerises AI applications so they run consistently anywhere
+- Flask / FastAPI: Python frameworks for building REST APIs that serve AI models
+
+AI in Business: Common Use Cases
+Companies use AI for customer service chatbots, document search, fraud detection, code generation, image generation, demand forecasting, and personalised recommendations. The Pace Innovation approach focuses on building rapid proof-of-concept AI solutions for clients — demonstrating what AI can do for a specific business problem within 2 to 6 weeks, before committing to full-scale development.
+
+Responsible AI
+AI systems must be designed with fairness, transparency, and safety in mind. This includes avoiding bias in training data, explaining model decisions to stakeholders, protecting user privacy, and implementing content filters and guardrails to prevent harmful outputs. Zero-trust security means never assuming any input is safe, and validating everything.

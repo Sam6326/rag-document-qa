@@ -1,0 +1,31 @@
+# Secret files — NEVER commit these
+.env
+
+# FAISS index (large binary files — rebuild from documents)
+faiss_index/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# HuggingFace model cache (very large — download separately)
+.cache/
+*.bin
+*.pt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp

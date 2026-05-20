@@ -1,0 +1,31 @@
+Financial Sentiment Analysis and NLP Techniques
+
+What is Sentiment Analysis?
+Sentiment analysis is the process of using AI to determine the emotional tone behind a piece of text. It classifies text as positive, negative, or neutral. In finance, sentiment analysis is used to understand how news articles or social media posts are likely to affect stock prices, investor confidence, or market trends.
+
+VADER Sentiment Analysis
+VADER stands for Valence Aware Dictionary and sEntiment Reasoner. It is a rule-based sentiment analysis tool specifically designed for social media text. VADER uses a dictionary of words, each with a sentiment score, and combines them with rules for punctuation, capitalisation, and modifiers like "very" or "not". VADER is fast, requires no training, and works well on short informal text like tweets. It returns four scores: positive, negative, neutral, and a compound score between -1 (most negative) and +1 (most positive).
+
+FinBERT
+FinBERT is a version of BERT (Bidirectional Encoder Representations from Transformers) that has been fine-tuned on financial text. The model was trained by ProsusAI and is available on HuggingFace as ProsusAI/FinBERT. Unlike VADER which uses rules, FinBERT understands context. It can distinguish between "the company avoided bankruptcy" (positive) and "the company avoided profits" (negative), because it understands financial language deeply. FinBERT classifies text as positive, negative, or neutral and is used for analysing financial news articles and earnings reports.
+
+Dual-Pipeline Architecture
+A dual-pipeline architecture means running two separate AI models in parallel, each specialised for a different type of input. For sentiment fusion across platforms, VADER is better suited for casual social media language (tweets), while FinBERT is better suited for formal financial news articles. Running both pipelines and comparing their outputs allows researchers to study how sentiment in different media types relates to each other.
+
+Vector Autoregression (VAR)
+Vector Autoregression is a statistical model used to capture the relationship between multiple time series variables. Instead of modelling one variable in isolation, VAR models all variables together and allows each variable to be explained by its own past values and the past values of all other variables. In sentiment analysis research, VAR can reveal whether sentiment in news precedes sentiment on social media, or vice versa.
+
+Granger Causality Testing
+Granger causality is a statistical test that asks whether one time series helps predict another. If knowing the past values of variable A improves the prediction of variable B, then A is said to Granger-cause B. It does not prove true causation in the philosophical sense, but it reveals directional statistical influence. A p-value below 0.05 means the relationship is statistically significant — there is less than 5% chance the result is due to random chance.
+
+REST APIs in AI Systems
+REST APIs (Representational State Transfer Application Programming Interfaces) allow different software systems to communicate over the internet using standard HTTP requests. In AI pipelines, REST APIs are used to send data to a model and receive predictions back. Flask is a lightweight Python framework for building REST APIs quickly. FastAPI is a modern, faster alternative that supports asynchronous requests and automatically generates API documentation. Both were used in the dissertation's dual-pipeline architecture to create API integration layers between components.
+
+Docker and Containerisation
+Docker packages an application and all its dependencies into a container — a lightweight, portable unit that runs consistently on any machine. Without Docker, "it works on my machine" is a common problem. With Docker, the entire environment (Python version, libraries, configurations) is bundled together. For AI pipelines, Docker ensures that the Flask API, the NLP models, and all their dependencies run identically in development, testing, and production. Google Cloud Platform (GCP) supports running Docker containers at scale.
+
+Subsample Stability Analysis
+Subsample stability analysis is a validation technique where you split your data into smaller subsets and re-run your statistical tests on each subset. If the results remain consistent across subsets, it increases confidence that the main finding is robust and not driven by a particular period or outlier in the data. In sentiment analysis research, this is used to validate that a Granger causality finding holds across different time periods.
+
+Publication-Ready Visualisations
+Publication-ready visualisations are charts and graphs that meet the quality standards required for academic papers or professional reports. They have clear labels, appropriate scaling, meaningful colour schemes, and include statistical information like confidence intervals or p-values. In data science projects, libraries like Matplotlib, Seaborn, and Plotly are used to create these visualisations. For business stakeholders, Tableau and Power BI are used to create interactive dashboards.
