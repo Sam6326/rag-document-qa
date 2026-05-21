@@ -178,8 +178,8 @@ rag-document-qa/
 ├── app.py              ← Main application (all RAG logic)
 ├── requirements.txt    ← Python dependencies
 ├── .env.example        ← Template for environment variables
-├── .env                ← Your actual secrets (NOT on GitHub)
-├── .gitignore          ← Keeps secrets and large files off GitHub
+├── .env                
+├── .gitignore          
 ├── data/
 │   ├── ai_overview.txt       ← Sample document 1
 │   └── nlp_and_finance.txt   ← Sample document 2
@@ -251,23 +251,6 @@ loader = DirectoryLoader(
 │          StrOutputParser → Answer                   │
 └─────────────────────────────────────────────────────┘
 ```
-
----
-
-## Interview Talking Points
-
-If asked about this project in an interview, here is what to say:
-
-**"What is RAG and why did you build this?"**
-> "RAG solves a core problem with LLMs — they hallucinate and have outdated training data. By combining semantic search over your own documents with LLM generation, you get answers grounded in real, current information. I built this to understand the full pipeline: document ingestion, chunking strategy, embedding model selection, vector store design, retrieval, and prompt engineering."
-
-**"Walk me through the architecture."**
-> "Documents are loaded, split into 500-character overlapping chunks, and converted to 384-dimensional vectors using sentence-transformers. These vectors are stored in FAISS. At query time, the question is embedded using the same model, FAISS returns the top-3 most similar chunks by cosine similarity, those chunks are injected into a prompt template with the question, and the LLM generates an answer constrained to the retrieved context. The chain is built using LangChain's LCEL — the modern composable pipeline approach."
-
-**"What would you do to take this to production?"**
-> "Several things: swap FAISS for a persistent vector store like Pinecone or pgvector for scalability; add a reranker (like Cohere rerank) to improve retrieval quality; implement streaming for better UX; add metadata filtering so users can scope search to specific document types; containerise with Docker; serve via FastAPI with authentication; and add evaluation using RAGAS metrics to measure retrieval precision and answer faithfulness."
-
----
 
 ## Troubleshooting
 
