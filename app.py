@@ -20,7 +20,7 @@ How RAG works (step by step):
      d. Get an answer that is grounded in your actual documents
 
 Author: Sampath Kumar
-Project: RAG Document Q&A - TCS AI Engineer Portfolio
+Project: RAG Document Q&A
 """
 
 import os
