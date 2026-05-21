@@ -1,4 +1,4 @@
-# Secret files — NEVER commit these
+#
 .env
 
 # FAISS index (large binary files — rebuild from documents)
